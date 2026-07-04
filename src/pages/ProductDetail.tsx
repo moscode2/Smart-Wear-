@@ -246,13 +246,13 @@ export default function ProductDetail() {
                     </button>
                     <span className="w-12 text-center font-medium">{quantity}</span>
                     <button
-                      onClick={() => setQuantity(Math.min(product.stock || 99, quantity + 1))}
+                      onClick={() => setQuantity(Math.min(Number(product.stock) || 99, quantity + 1))}
                       className="w-10 h-10 rounded-md border border-gray-300 hover:bg-blush-50 transition"
                     >
                       +
                     </button>
                     <span className="text-sm text-gray-600 ml-2">
-                      {product.stock > 0 ? `(${product.stock} in stock)` : "(Out of stock)"}
+                    {Number(product.stock) > 0 ? `(${Number(product.stock)} in stock)` : "(Out of stock)"}
                     </span>
                   </div>
                 </div>
@@ -261,7 +261,7 @@ export default function ProductDetail() {
                 <div className="flex gap-4 mb-6">
                   <button
                     onClick={handleAddToCart}
-                    disabled={product.stock === 0}
+                    disabled={Number(product.stock) === 0}
                     className={`flex-1 px-6 py-4 rounded-lg font-semibold transition flex items-center justify-center gap-2 ${
                       product.stock === 0
                         ? "bg-gray-200 text-gray-500 cursor-not-allowed"
@@ -291,7 +291,7 @@ export default function ProductDetail() {
                 <div className="border-t pt-6 space-y-3">
                   <div className="flex items-center gap-3 text-sm text-gray-600">
                     <Truck className="h-5 w-5 text-plum-600" />
-                    <span>Free delivery within Nairobi on orders over Ksh 10,000</span>
+                    <span>Free delivery Country wide</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-gray-600">
                     <RefreshCw className="h-5 w-5 text-plum-600" />

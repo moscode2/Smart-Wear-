@@ -77,8 +77,8 @@ export default function Home() {
               <div className="w-16 h-16 bg-blush-200 rounded-full flex items-center justify-center mb-4">
                 <Truck className="h-8 w-8 text-plum-700" />
               </div>
-              <h3 className="font-semibold text-ink mb-2">Free Delivery Countrywide.</h3>
-              <p className="text-sm text-gray-600">Get discount on orders above Ksh 10,000</p>
+              <h3 className="font-semibold text-ink mb-2">Free Delivery Country Wide.</h3>
+              <p className="text-sm text-gray-600">Get discount for orders above Ksh 10,000</p>
             </motion.div>
 
             <motion.div

@@ -8,8 +8,8 @@ import { useCart } from "../context/CartContext";
 import { supabase } from "../lib/supabase";
 import { paymentConfig } from "../config/payment";
 
-const SHIPPING_FEE = 300;
-const FREE_SHIPPING_THRESHOLD = 10000;
+const SHIPPING_FEE = 0;
+const FREE_SHIPPING_THRESHOLD = 0;
 
 type PaymentMethod = "mpesa" | "bank";
 

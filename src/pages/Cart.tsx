@@ -6,15 +6,9 @@ import CartItem from "../components/CartItem";
 import { formatKSH } from "../lib/currency";
 import { useCart } from "../context/CartContext";
 
-const FREE_SHIPPING_THRESHOLD = 10000;
-const SHIPPING_FEE = 300;
 
 export default function Cart() {
   const { items, updateQuantity, removeItem, subtotal } = useCart();
-
-  const shipping = items.length === 0 ? 0 : subtotal > FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_FEE;
-  const total = subtotal + shipping;
-
   if (items.length === 0) {
     return (
       <Layout>
@@ -76,48 +70,36 @@ export default function Cart() {
             </div>
 
             {/* Order Summary */}
-            <div>
-              <div className="bg-white rounded-lg shadow-sm p-6 sticky top-24">
-                <h2 className="text-xl font-bold text-ink mb-6">Order Summary</h2>
-                
-                <div className="space-y-3 mb-6">
-                  <div className="flex justify-between text-gray-600">
-                    <span>Subtotal</span>
-                    <span>{formatKSH(subtotal)}</span>
-                  </div>
-                  <div className="flex justify-between text-gray-600">
-                    <span>Delivery</span>
-                    <span>{shipping === 0 ? "FREE" : formatKSH(shipping)}</span>
-                  </div>
-                  <div className="border-t pt-3 flex justify-between text-lg font-bold text-ink">
-                    <span>Total</span>
-                    <span>{formatKSH(total)}</span>
-                  </div>
-                </div>
+    <div>
+  <div className="bg-white rounded-lg shadow-sm p-6 sticky top-24">
+    <h2 className="text-xl font-bold text-ink mb-6">Order Summary</h2>
 
-                {subtotal < FREE_SHIPPING_THRESHOLD && (
-                  <div className="bg-blush-100 border border-blush-200 rounded-lg p-4 mb-6">
-                    <p className="text-sm text-plum-800">
-                      Add <span className="font-semibold">{formatKSH(FREE_SHIPPING_THRESHOLD - subtotal)}</span> more to get free delivery!
-                    </p>
-                  </div>
-                )}
+    <div className="space-y-3 mb-6">
+      <div className="flex justify-between text-gray-600">
+        <span>Subtotal</span>
+        <span>{formatKSH(subtotal)}</span>
+      </div>
+      <div className="border-t pt-3 flex justify-between text-lg font-bold text-ink">
+        <span>Total</span>
+        <span>{formatKSH(subtotal)}</span>
+      </div>
+    </div>
 
-                <Link
-                  to="/checkout"
-                  className="block w-full px-6 py-4 bg-plum-700 text-white text-center rounded-lg font-semibold hover:bg-plum-800 transition mb-3"
-                >
-                  Proceed to Checkout
-                </Link>
+    <Link
+      to="/checkout"
+      className="block w-full px-6 py-4 bg-plum-700 text-white text-center rounded-lg font-semibold hover:bg-plum-800 transition mb-3"
+    >
+      Proceed to Checkout
+    </Link>
 
-                <Link
-                  to="/shop"
-                  className="block w-full px-6 py-3 border-2 border-gray-300 text-gray-700 text-center rounded-lg font-semibold hover:border-plum-600 hover:text-plum-600 transition"
-                >
-                  Continue Shopping
-                </Link>
-              </div>
-            </div>
+    <Link
+      to="/shop"
+      className="block w-full px-6 py-3 border-2 border-gray-300 text-gray-700 text-center rounded-lg font-semibold hover:border-plum-600 hover:text-plum-600 transition"
+    >
+      Continue Shopping
+           </Link>
+           </div>
+           </div>
           </div>
         </div>
       </div>

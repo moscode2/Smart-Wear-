@@ -11,7 +11,7 @@ export default function Header() {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       {/* Top banner */}
       <div className="bg-plum-800 text-blush-100 text-center py-2 text-sm tracking-wide">
-        <p>Free delivery countrywide,,get discount for orders above 10,000 &middot; Pay with M-Pesa or bank deposit</p>
+        <p>Free delivery countrywide on orders over Ksh 10,000  &middot; Pay with M-Pesa or bank deposit</p>
       </div>
 
       {/* Main header */}

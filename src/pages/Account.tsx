@@ -37,8 +37,8 @@ export default function Account() {
                 <div className="w-24 h-24 bg-gradient-to-br from-plum-600 to-rosegold-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <User className="h-12 w-12 text-white" />
                 </div>
-                <h2 className="text-xl font-bold text-ink">John Doe</h2>
-                <p className="text-gray-600 text-sm">john@example.com</p>
+                <h2 className="text-xl font-bold text-ink">Maxwell Morgan</h2>
+                <p className="text-gray-600 text-sm">maxwell@example.com</p>
               </div>
 
               <div className="bg-white rounded-lg shadow-sm p-4 mt-6 space-y-3">

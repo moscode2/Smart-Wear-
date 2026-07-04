@@ -66,7 +66,7 @@ export default function About() {
               <div className="w-16 h-16 bg-blush-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="h-8 w-8 text-plum-700" />
               </div>
-              <h3 className="text-2xl font-bold text-ink mb-2">500+</h3>
+              <h3 className="text-2xl font-bold text-ink mb-2">300+</h3>
               <p className="text-gray-600">Products Sold</p>
             </motion.div>
 
@@ -80,7 +80,7 @@ export default function About() {
               <div className="w-16 h-16 bg-rosegold-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-rosegold-600" />
               </div>
-              <h3 className="text-2xl font-bold text-ink mb-2">2000+</h3>
+              <h3 className="text-2xl font-bold text-ink mb-2">1000+</h3>
               <p className="text-gray-600">Happy Customers</p>
             </motion.div>
 
