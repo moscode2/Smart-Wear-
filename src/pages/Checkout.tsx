@@ -58,7 +58,9 @@ export default function Checkout() {
   const [formData, setFormData] = useState({
     Name: "",
     phone: "",
+    address: "",
     city: "",
+    notes: "",
     mpesaCode: "",
   });
 
@@ -70,7 +72,7 @@ export default function Checkout() {
   };
 
   const isShippingValid =
-    formData.Name.trim() && formData.phone.trim()  && formData.city.trim();
+    formData.Name.trim() && formData.phone.trim() && formData.city.trim();
 
   const handleSubmitOrder = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -90,6 +92,7 @@ export default function Checkout() {
           order_number: generatedOrderNumber,
           customer_name: formData.Name,
           customer_phone: formData.phone,
+          delivery_address: formData.address,
           delivery_city: formData.city,
           payment_method: paymentMethod,
           mpesa_code: paymentMethod === "mpesa" ? formData.mpesaCode.trim() : null,
@@ -161,7 +164,9 @@ export default function Checkout() {
               </p>
               <div className="bg-blush-50 rounded-lg p-4 mb-6 text-left">
                 <p className="text-sm text-gray-700"><strong>Order Total:</strong> {formatKSH(total)}</p>
-                <p className="text-sm text-gray-700 mt-2"><strong>Delivery to:</strong> {formData.address}, {formData.city}</p>
+                <p className="text-sm text-gray-700 mt-2">
+                  <strong>Delivery to:</strong> {formData.address ? `${formData.address}, ` : ""}{formData.city}
+                </p>
                 <p className="text-sm text-gray-700 mt-2">
                   <strong>We'll contact you on:</strong> {formData.phone}
                 </p>
@@ -211,6 +216,14 @@ export default function Checkout() {
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:outline-none"
                     />
                   </div>
+                  <input
+                    type="text"
+                    name="address"
+                    placeholder="Delivery Address (optional)"
+                    value={formData.address}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:outline-none"
+                  />
                   <input
                     type="text"
                     name="city"
@@ -279,21 +292,11 @@ export default function Checkout() {
                             Pay {formatKSH(total)} via M-Pesa, then enter your confirmation code below.
                           </p>
                           <div className="space-y-2">
-                            {paymentConfig.mpesa.tillNumber && (
-                              <CopyableField label="Buy Goods / Till Number" value={paymentConfig.mpesa.tillNumber} />
-                            )}
-                            {paymentConfig.mpesa.paybillNumber && (
-                              <>
-                                <CopyableField label="Paybill Number" value={paymentConfig.mpesa.paybillNumber} />
-                                {paymentConfig.mpesa.paybillAccountName && (
-                                  <CopyableField label="Account Number" value={paymentConfig.mpesa.paybillAccountName} />
-                                )}
-                              </>
-                            )}
+                            <CopyableField label="Pochi la Biashara Number" value={paymentConfig.mpesa.pochiNumber} />
                             <CopyableField label="Registered Name" value={paymentConfig.mpesa.recipientName} />
                           </div>
                           <ol className="text-xs text-green-800/90 mt-3 space-y-1 list-decimal list-inside">
-                            <li>Go to M-Pesa on your phone &rarr; Lipa na M-Pesa {paymentConfig.mpesa.paybillNumber ? "&rarr; Pay Bill" : "&rarr; Buy Goods and Services"}</li>
+                            <li>Go to M-Pesa on your phone &rarr; Lipa na M-Pesa &rarr; Pochi la Biashara</li>
                             <li>Enter the number above and amount {formatKSH(total)}</li>
                             <li>Enter your M-Pesa PIN to complete payment</li>
                             <li>Copy the confirmation code from the SMS you receive and paste it below</li>

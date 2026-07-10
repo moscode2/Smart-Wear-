@@ -1,10 +1,10 @@
 
 export const paymentConfig = {
   mpesa: {
-    tillNumber: "000000", // e.g. "174379"
-    paybillNumber: "", // e.g. "400222"
-    paybillAccountName: "", // e.g. "Smart Wear" — only needed if using Paybill
-    recipientName: "Smart Wear Collection", // Name registered on the M-Pesa line
+    pochiNumber: "+254707183283", 
+
+    AccountName: "+254707183283", // e.g. "Smart Wear" — only needed if using Paybill
+    recipientName: "Ann Onyango", // Name registered on the M-Pesa line
   },
   bank: {
     bankName: "Your Bank Name",
