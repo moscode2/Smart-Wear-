@@ -63,6 +63,15 @@ export default function Footer() {
           <span>© 2026 Smart Wear Collection. All rights reserved.</span>
           <span className="hidden sm:inline">&middot;</span>
           <Link to="/admin" className="hover:text-rosegold-300 transition">Admin</Link>
+          <span className="hidden sm:inline">&middot;</span>
+          <a
+            href="https://justmee.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-rosegold-300 transition"
+          >
+            Developed by Moses.
+          </a>
         </div>
       </div>
     </footer>
