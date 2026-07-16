@@ -1,10 +1,10 @@
 
 export const paymentConfig = {
   mpesa: {
-    pochiNumber: "+254707183283", 
+    pochiNumber: "+254707183283 or +254742430579", 
 
     AccountName: "+254707183283", // e.g. "Smart Wear" — only needed if using Paybill
-    recipientName: "Ann Onyango", // Name registered on the M-Pesa line
+    recipientName: "Ann Onyango or Selline Onyango respectively", // Name registered on the M-Pesa line
   },
   bank: {
     bankName: "Your Bank Name",
