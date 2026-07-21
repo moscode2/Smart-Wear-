@@ -20,7 +20,11 @@ export interface Product {
 export const categories = [
   "All",
   "Dresses",
-  "Gowns",
+  "Shirts",
+  "Suits",
+  "Jackets",
+  "Pants",
+  "Trousers",
   "Costumes",
   "Traditional Wear",
   "Skirts & Tops",
@@ -28,7 +32,7 @@ export const categories = [
   "Accessories",
 ];
 
-export const genders = ["All", "Womens", "Kids"];
+export const genders = ["All", "Men", "Womens", "Kids"];
 
 export const allSizes = ["XS", "S", "M", "L", "XL", "XXL", "4", "6", "8", "10", "12"];
 

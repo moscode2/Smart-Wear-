@@ -279,6 +279,7 @@ export default function Products() {
                   <tr>
                     <th className="text-left py-4 px-6 font-semibold text-ink">Product</th>
                     <th className="text-left py-4 px-6 font-semibold text-ink">Category</th>
+                    <th className="text-left py-4 px-6 font-semibold text-ink">Gender</th>
                     <th className="text-left py-4 px-6 font-semibold text-ink">Price</th>
                     <th className="text-left py-4 px-6 font-semibold text-ink">Stock</th>
                     <th className="text-left py-4 px-6 font-semibold text-ink">Actions</th>
@@ -306,6 +307,7 @@ export default function Products() {
                         </div>
                       </td>
                       <td className="py-4 px-6 text-gray-600">{product.category}</td>
+                      <td className="py-4 px-6 text-gray-600">{product.gender}</td>
                       <td className="py-4 px-6 font-semibold text-ink">{formatKSH(product.price)}</td>
                       <td className="py-4 px-6">
                         <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
@@ -480,6 +482,7 @@ export default function Products() {
                         onChange={(e) => setFormData({ ...formData, gender: e.target.value })}
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-plum-500 text-sm"
                       >
+                        <option>Mens</option>
                         <option>Womens</option>
                         <option>Kids</option>
                         <option>Unisex</option>

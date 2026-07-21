@@ -12,7 +12,7 @@ export default function Footer() {
               Smart Wear
             </div>
             <p className="text-sm text-blush-200/80 mb-4">
-              Your destination for elegant ladies' dresses, gowns, costumes and traditional wear. Pay easily with M-Pesa or bank deposit.
+              Your destination for elegant wears' dresses, gowns, costumes and traditional wear. Pay easily with M-Pesa or bank deposit.
             </p>
           </div>
 
